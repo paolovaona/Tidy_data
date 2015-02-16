@@ -1,0 +1,107 @@
+##Code Book
+The following list give the description of the variables in the data set at stage 4 of the requirements. 
+The codebook is ok also for part 5 considering that only variable volunteer and activity_ext are present, while all the features are the same.
+
+1. ID_set: the identification tag for each of the 2 random set in which volunteers results have been divided.
+
+2. ID_vol: The identification number of each volunteer goes from 1 to 30.
+
+3. ID_act: the identification number of each activity
+          1-WALKING
+          2-WALKING_UPSTAIRS
+          3-WALKING_DOWNSTAIRS
+          4-SITTING
+          5-STANDING
+          6-LAYING
+          
+4. activity_ext: The extended name of the activities as per list provided.
+
+Here below is provided the list of all the other features.
+
+5.  Time Body Accelerometer_mean() x                                       
+6.  Time Body Accelerometer_mean() y                                       
+7.  Time Body Accelerometer_mean() z                                      
+8.  Time_Gravity_Accelerometer_mean()_x                                   
+9.  Time_Gravity_Accelerometer_mean()_y                                    
+10. Time_Gravity_Accelerometer_mean()_z                                    
+11. Time_Body_Accelerometer_Jerk_signal_mean()_x                          
+12. Time_Body_Accelerometer_Jerk_signal_mean()_y                          
+13. Time_Body_Accelerometer_Jerk_signal_mean()_z                          
+14. Time_Body_Gyroscope_mean()_x                                           
+15. Time_Body_Gyroscope_mean()_y                                           
+16. Time_Body_Gyroscope_mean()_z                                           
+17. Time_Body_Gyroscope_Jerk_signal_mean()_x                               
+18. Time_Body_Gyroscope_Jerk_signal_mean()_y                               
+19. Time_Body_Gyroscope_Jerk_signal_mean()_z                              
+20. Time_Body_Accelerometer_Magnitude_mean                              
+21. Time_Gravity_Accelerometer_Magnitude_mean                           
+22. Time_Body_Accelerometer_Jerk_signal_Magnitude_mean                   
+23. Time_Body_Gyroscope_Magnitude_mean                                 
+24. Time_Body_Gyroscope_Jerk_signal_Magnitude_mean                       
+25. Frequency_Body_Accelerometer_mean()_x                                 
+26. Frequency_Body_Accelerometer_mean()_y                                 
+27. Frequency_Body_Accelerometer_mean()_z                                 
+28. Frequency_Body_Accelerometer_Jerk_signal_mean()_x                     
+29. Frequency_Body_Accelerometer_Jerk_signal_mean()_y                     
+30. Frequency_Body_Accelerometer_Jerk_signal_mean()_z                     
+31. Frequency_Body_Gyroscope_mean()_x                                      
+32. Frequency_Body_Gyroscope_mean()_y                                      
+33. Frequency_Body_Gyroscope_mean()_z                                      
+34. Frequency_Body_Accelerometer_Magnitude_mean                        
+35. Frequency_Body_Accelerometer_Jerk_signal_Magnitude_mean             
+36. Frequency_Body_Gyroscope_Magnitude_mean                          
+37. Frequency_Body_Gyroscope_Jerk_signal_Magnitude_mean                  
+38. Time_Body_Accelerometer_Standard_deviation()_x                         
+39. Time_Body_Accelerometer_Standard_deviation()_y                         
+40. Time_Body_Accelerometer_Standard_deviation()_z                       
+41. Time_Gravity_Accelerometer_Standard_deviation()_x                      
+42. Time_Gravity_Accelerometer_Standard_deviation()_y                      
+43. Time_Gravity_Accelerometer_Standard_deviation()_z                     
+44. Time_Body_Accelerometer_Jerk_signal_Standard_deviation()_x             
+45. Time_Body_Accelerometer_Jerk_signal_Standard_deviation()_y             
+46. Time_Body_Accelerometer_Jerk_signal_Standard_deviation()_z            
+47. Time_Body_Gyroscope_Standard_deviation()_x                             
+48. Time_Body_Gyroscope_Standard_deviation()_y                            
+49. Time_Body_Gyroscope_Standard_deviation()_z                            
+50. Time_Body_Gyroscope_Jerk_signal_Standard_deviation()_x"                
+51. Time_Body_Gyroscope_Jerk_signal_Standard_deviation()_y                 
+52. Time_Body_Gyroscope_Jerk_signal_Standard_deviation()_z                 
+53. Time_Body_Accelerometer_Magnitude_Standard_deviation()                
+54. Time_Gravity_Accelerometer_Magnitude_Standard_deviation             
+55. Time_Body_Accelerometer_Jerk_signal_Magnitude_Standard_deviation    
+56. Time_Body_Gyroscope_Magnitude_Standard_deviation                    
+57. Time_Body_Gyroscope_Jerk_signal_Magnitude_Standard_deviation        
+58. Frequency_Body_Accelerometer_Standard_deviation()_x                    
+59. Frequency_Body_Accelerometer_Standard_deviation()_y                   
+60. Frequency_Body_Accelerometer_Standard_deviation()_z                    
+61. Frequency_Body_Accelerometer_Jerk_signal_Standard_deviation()_x        
+62. Frequency_Body_Accelerometer_Jerk_signal_Standard_deviation()_y        
+63. Frequency_Body_Accelerometer_Jerk_signal_Standard_deviation()_z        
+64. Frequency_Body_Gyroscope_Standard_deviation()_x                        
+65. Frequency_Body_Gyroscope_Standard_deviation()_y                        
+66. Frequency_Body_Gyroscope_Standard_deviation()_z                        
+67. Frequency_Body_Accelerometer_Magnitude_Standard_deviation           
+68. Frequency_Body_Accelerometer_Jerk_signal_Magnitude_Standard_deviation
+69. Frequency_Body_Gyroscope_Magnitude_Standard_deviation              
+70. Frequency_Body_Gyroscope_Jerk_signal_Magnitude_Standard_deviation    
+71. angle(_Time_Body_Accelerometer_Mean,gravity)                         
+72. angle(_Time_Body_Accelerometer_Jerk_signal_Mean),gravity_Mean)      
+73. angle(_Time_Body_Gyroscope_Mean,gravity_Mean)                        
+74. angle(_Time_Body_Gyroscope_Jerk_signal_Mean,gravity_Mean)            
+75. angle(x,gravity_Mean)                                                  
+76. angle(y,gravity_Mean)                                                  
+77. angle(z,gravity_Mean)                                                  
+78. Frequency_Body_Accelerometer_mean_Freq()_x                             
+79. Frequency_Body_Accelerometer_mean_Freq()_y                             
+80. Frequency_Body_Accelerometer_mean_Freq()_z                             
+81. Frequency_Body_Accelerometer_Jerk_signal_mean_Freq()_x                 
+82. Frequency_Body_Accelerometer_Jerk_signal_mean_Freq()_y                
+83. Frequency_Body_Accelerometer_Jerk_signal_mean_Freq()_z                 
+84. Frequency_Body_Gyroscope_mean_Freq()_x                                 
+85. Frequency_Body_Gyroscope_mean_Freq()_y                                
+86. Frequency_Body_Gyroscope_mean_Freq()_z                                
+87. Frequency_Body_Accelerometer_Magnitude_mean_Freq                    
+88. Frequency_Body_Accelerometer_Jerk_signal_Magnitude_mean_Freq    
+89. Frequency_Body_Gyroscope_Magnitude_mean_Freq                    
+90. Frequency_Body_Gyroscope_Jerk_signal_Magnitude_mean_Freq 
+

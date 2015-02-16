@@ -1,0 +1,115 @@
+---
+output: html_document
+---
+#ReadMe
+
+The assignment of Getting and Cleaning Data is to create one R script called run_analysis.R that does the following:
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of    each variable   for each activity and each subject.
+
+##Input Data
+Data come from the paper:
+*Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012*
+
+The experiments have been carried out with a group of 30 volunteers.
+
+Each person performed six activities:
+
+1. WALKING
+2. WALKING_UPSTAIRS
+3. WALKING_DOWNSTAIRS
+4. SITTING
+5. STANDING
+6. LAYING
+
+During the activities were recorder 3-axial linear acceleration(XYZ acc) and 3-axial angular velocity(XYZ ang).
+
+The obtained dataset has been randomly partitioned into two sets:
+
+* **Training** 21 person
+* **Test** 9 person
+
+XYZ acc and XYZ ang were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window)
+
+From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+
+For each record it is provided:
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated 
+  body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+The dataset includes the following files:
+
+- 'README.txt'
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
+
+- subject: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+- Inertial Signals: **not needed for the assignment**
+
+The units of the measurements are the following:
+
+* Total Acceleration [g]
+* Body Acceleration, where g is subtracted [m/s^2]
+* Angular velocity [ rad/sec]
+
+
+##Merge Train and Test sets
+
+The function **stat_data <- function(name,stat)** with input the name of the folders(train and test) do the following:
+
+1. Read from the folder UCI HAR Dataset the activity name and the features. These values are labeld to be reused.
+
+2. A **for cycle** run for the two folder and read the subject list, the feature vector and the lables of the activity.
+
+3. Assign and create 3 new rows at the beginning of the data.table with the information of the set, the information of the activity and the information of the subject that performed the activity.
+
+4.Merge the two data.tables with rbind.
+
+The total readed variables are 561 to which have to be added the 3 new created variables ID_set,ID_vol and ID_act. The total is then 564 variables.
+The rows of the test set are 2947, while the rows of the train set are 7352. The total is then 10299 rows.
+
+##Mean and std extraction
+
+Only the varibles which contains means and standard deviation are extracted.These are characterized by the following labels:
+
+* **mean()** suffix.
+* **std()** suffix.
+* **meanFreq()** suffix
+* **Mean**  for the angle variables, since mean and average are synonimous.
+
+Total variables that have to be extracted are then 33 for mean(), 33 for std() and 7 for Mean and 13 for meanFreq() for a total of 86 variables. Adding the 3 ID variables a total of 89 variables is obtained.
+
+##Name the activity in the data set
+To do this the a new column is added to the dataset.
+To add it the command mutate is used. In this way for each record it is possible to obtain from the variable **activity_ext** the extended name of the activity according to the description provided in the original data set.
+
+##Name the variables with descriptive names
+The current names assigned to the different variables already describe the content of the variable. The shrinked names have been extended( e.g. t has been changed to time), using gsub.
+For any doubt please refer to codebook.
+
+##Average of each variable for each activity and each subject.
+To subset the data set it has been chose to be used ddply function to summarize for each volunteer and activity the mean of all the features.
+The result is a wide tidy data set. The columns are 88, equal to 86 observation plus activity and volunteer id variables.
+The rows are equal to 180, which is correct since there are 6 activity for 30 volunteers, 6x30=180.
